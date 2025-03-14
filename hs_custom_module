@@ -1,0 +1,49 @@
+{% module "custom_reusable_module" path="@hubspot/module" %}
+
+<!-- Custom HubSpot Module: Green.Earth Style -->
+<section class="custom-module" style="background-color: {{ module.background_color }}">
+    <div class="container">
+        <!-- Headline and Subheadline -->
+        <h1>{{ module.heading }}</h1>
+        <h2>{{ module.subheading }}</h2>
+        
+        <!-- Image Upload -->
+        {% if module.image %}
+            <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" class="module-image" />
+        {% endif %}
+        
+        <!-- CTA Button -->
+        {% if module.cta_link and module.cta_text %}
+            <a href="{{ module.cta_link }}" class="cta-button">{{ module.cta_text }}</a>
+        {% endif %}
+    </div>
+</section>
+
+<style>
+    .custom-module {
+        padding: 40px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .custom-module .container {
+        max-width: 800px;
+        margin: left;
+    }
+    .module-image {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 5px
+    }
+    .cta-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #000210c3;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+</style>
+
+{% end_module %}
