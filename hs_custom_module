@@ -1,4 +1,4 @@
-{% module "custom_reusable_module" path="@hubspot/module" %}
+{% module "hs_custom_module" path="@hubspot/module" %}
 
 <!-- Custom HubSpot Module: Green.Earth Style -->
 <section class="custom-module" style="background-color: {{ module.background_color }}">
